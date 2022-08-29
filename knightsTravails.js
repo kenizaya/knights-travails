@@ -11,12 +11,12 @@ const knightMoves = (start, end) => {
   ]
 
   const visited = []
-  const queue = [[start, end]]
+  const queue = [start]
   let pos = null
 
   while (queue.length) {
     pos = queue.shift()
-    if (pos[0][0] === pos[1][0] && pos[0][1] === pos[1][1]) return
+    if (pos[0][0] === end[0][0] && pos[0][1] === end[0][1]) console.log(pos)
   }
 }
 
