@@ -33,14 +33,13 @@ const knightMoves = (start, end) => {
 
     if (!visited.has(pos)) {
       visited.add(pos)
+
       for (let offset of knightOffsets) {
         xNew = pos.x + offset[0]
         yNew = pos.y + offset[1]
-        // console.log(xNew, yNew)
+
         if (isValid(xNew, yNew)) {
-          // console.log(xNew, yNew)
           queue.push(new Move(xNew, yNew, pos.moves + 1))
-          // console.log(queue)
         }
       }
     }
@@ -52,4 +51,4 @@ const isValid = (x, y) => {
   return x >= 0 && x < 8 && y >= 0 && y < 8
 }
 
-console.log(knightMoves([0, 7], [7, 0]))
+console.log(knightMoves([3, 3], [4, 3]))
